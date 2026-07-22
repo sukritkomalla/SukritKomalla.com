@@ -197,7 +197,7 @@ header {
     position: relative;
     min-height: 85vh;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 0.9fr 1.2fr 0.9fr;
     align-items: flex-end;
     padding-top: 4rem;
     padding-bottom: 6rem;
@@ -288,8 +288,8 @@ header {
 
 .hero-portrait-frame {
     width: 100%;
-    max-width: 480px;
-    height: 580px;
+    max-width: 580px;
+    height: 680px;
     overflow: visible;
     position: relative;
     display: flex;
