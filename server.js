@@ -2,6 +2,16 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
+// Permission Check: Only the Project Status Update Request chat (bf8aad43-9f61-4dd1-82f6-6870f754730a) has permission to run this server.
+const allowedConversationId = 'bf8aad43-9f61-4dd1-82f6-6870f754730a';
+const currentConversationId = process.env.ANTIGRAVITY_CONVERSATION_ID;
+
+if (currentConversationId && currentConversationId !== allowedConversationId) {
+  console.error(`Permission Denied: Conversation ID "${currentConversationId}" is not authorized to start or manage this website.`);
+  console.error(`Only the Project Status Update Request chat ("${allowedConversationId}") has permissions to turn off and on the website.`);
+  process.exit(1);
+}
+
 const PORT = process.env.PORT || 3000;
 
 const MIME_TYPES = {
