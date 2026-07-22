@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Studio — Sukrit Komalla</title>
+    
+    <!-- Strict Hostname Isolation Check -->
+    <script>
+      (function() {
+        const isLocal = window.location.hostname === 'localhost' || 
+                        window.location.hostname === '127.0.0.1' || 
+                        window.location.hostname === '[::1]';
+        if (!isLocal) {
+          document.documentElement.style.display = 'none';
+          window.location.href = 'index.html';
+        }
+      })();
+    </script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap">
+    
+    <style>
+        :root {
+            --bg-base: #0B0F14;
+            --bg-card: #131920;
+            --bg-input: #1B222C;
+            --text-main: #E5DED4;
+            --text-muted: #848D9A;
+            --accent: #B07A65;
+            --accent-hover: #C58B75;
+            --border: rgba(229, 222, 212, 0.1);
+            --border-focus: rgba(176, 122, 101, 0.5);
+            --danger: #D16D6D;
+            --success: #6DD1A3;
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            font-family: 'Inter', system-ui, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.5;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(11, 15, 20, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            background-color: rgba(109, 209, 163, 0.1);
+            color: var(--success);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .status-badge.offline {
+            background-color: rgba(209, 109, 109, 0.1);
+            color: var(--danger);
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background-color: currentColor;
+            border-radius: 50%;
+        }
+
+        .main-container {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            flex: 1;
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .sidebar {
+            border-right: 1px solid var(--border);
+            padding: 2.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .sidebar-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            text-align: left;
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar-btn:hover {
+            color: var(--text-main);
+            background-color: rgba(229, 222, 212, 0.03);
+        }
+
+        .sidebar-btn.active {
+            color: var(--bg-base);
+            background-color: var(--text-main);
+        }
+
+        .content-panel {
+            padding: 3rem 4rem;
+            overflow-y: auto;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        input[type="text"], textarea, select {
+            width: 100%;
+            background-color: var(--bg-input);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        input[type="text"]:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--border-focus);
+            box-shadow: 0 0 0 1px var(--border-focus);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .row-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .btn {
+            background-color: var(--accent);
+            color: var(--bg-base);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-family: inherit;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(229, 222, 212, 0.05);
+            border-color: var(--text-main);
+        }
+
+        .btn-danger {
+            background-color: var(--danger);
+            color: var(--text-main);
+        }
+
+        .btn-danger:hover {
+            background-color: #e58282;
+        }
+
+        /* Works Feed Specifics */
+        .feed-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .feed-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .feed-item-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .feed-item-card:hover {
+            border-color: rgba(229, 222, 212, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .feed-item-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .feed-item-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .feed-item-sub {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            display: flex;
+            gap: 12px;
+        }
+
+        .feed-item-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        /* Skill Tag Management */
+        .skills-list-editor {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .skill-tag-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 10px 14px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .skill-tag-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .skill-tag-code {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+
+        .skill-tag-name {
+            font-size: 0.85rem;
+        }
+
+        .skill-tag-delete {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .skill-tag-delete:hover {
+            color: var(--danger);
+        }
+
+        /* Modal dialog styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(11, 15, 20, 0.75);
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            transform: scale(0.95);
+            transition: var(--transition);
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            padding: 1.25rem 2rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-body {
+            padding: 2rem;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .modal-footer {
+            padding: 1.25rem 2rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+        }
+
+        /* Float save feedback bar */
+        .save-bar {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            z-index: 90;
+            transition: var(--transition);
+        }
+
+        .save-bar.active {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .save-bar-text {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .save-bar-text span {
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        /* Toast Notifications */
+        .toast {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            background-color: var(--bg-card);
+            border-left: 4px solid var(--success);
+            padding: 16px 24px;
+            border-radius: 4px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            z-index: 2000;
+            transform: translateX(150%);
+            transition: var(--transition);
+            font-size: 0.85rem;
+        }
+
+        .toast.active {
+            transform: translateX(0);
+        }
+
+        .toast.error {
+            border-left-color: var(--danger);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Developer<span>Studio</span></div>
+        <div id="connectionStatus" class="status-badge">
+            <div class="status-dot"></div>
+            <span id="connectionText">Checking Server...</span>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <button class="sidebar-btn active" onclick="switchTab('hero')">
+                Hero Copy
+            </button>
+            <button class="sidebar-btn" onclick="switchTab('feed')">
+                Works Feed
+            </button>
+            <button class="sidebar-btn" onclick="switchTab('skills')">
+                Skills & Tools
+            </button>
+            <button class="sidebar-btn" onclick="switchTab('contact')">
+                Contact details
+            </button>
+        </div>
+
+        <div class="content-panel">
+            <!-- Hero Tab -->
+            <section id="tab-hero" class="tab-content">
+                <h2 class="section-title">Hero Copy</h2>
+                <div class="form-group">
+                    <label for="hero-greeting">Greeting Prefix</label>
+                    <input type="text" id="hero-greeting" oninput="markDirty()">
+                </div>
+                <div class="form-group">
+                    <label for="hero-name">Headline Name (HTML allowed)</label>
+                    <input type="text" id="hero-name" oninput="markDirty()">
+                </div>
+                <div class="form-group">
+                    <label for="hero-title">Site Subtitle</label>
+                    <input type="text" id="hero-title" oninput="markDirty()">
+                </div>
+                <div class="form-group">
+                    <label for="hero-intro">Introductory Paragraph</label>
+                    <textarea id="hero-intro" oninput="markDirty()"></textarea>
+                </div>
+            </section>
+
+            <!-- Feed Tab -->
+            <section id="tab-feed" class="tab-content" style="display: none;">
+                <div class="feed-header">
+                    <h2 class="section-title" style="margin-bottom: 0; border: none; padding: 0;">Works Feed</h2>
+                    <button class="btn" onclick="openWorkModal()">+ Add New Work</button>
+                </div>
+                <div class="feed-list" id="feedListContainer">
+                    <!-- Cards injected dynamically -->
+                </div>
+            </section>
+
+            <!-- Skills Tab -->
+            <section id="tab-skills" class="tab-content" style="display: none;">
+                <h2 class="section-title">Skills & Tools</h2>
+                <div class="skills-list-editor" id="skillsListContainer">
+                    <!-- Tags injected dynamically -->
+                </div>
+                <div class="form-group row-grid" style="align-items: flex-end;">
+                    <div>
+                        <label for="new-skill-code">Icon Abbreviation (e.g. Py, Git)</label>
+                        <input type="text" id="new-skill-code" placeholder="Py">
+                    </div>
+                    <div>
+                        <label for="new-skill-name">Skill Name</label>
+                        <input type="text" id="new-skill-name" placeholder="Python">
+                    </div>
+                    <button class="btn btn-outline" onclick="addSkill()" style="height: 46px;">Add Skill Tag</button>
+                </div>
+            </section>
+
+            <!-- Contact Tab -->
+            <section id="tab-contact" class="tab-content" style="display: none;">
+                <h2 class="section-title">Contact Card</h2>
+                <div class="form-group">
+                    <label for="contact-email">Email Address</label>
+                    <input type="text" id="contact-email" oninput="markDirty()">
+                </div>
+                <div class="form-group">
+                    <label for="contact-location">Location Tag</label>
+                    <input type="text" id="contact-location" oninput="markDirty()">
+                </div>
+                <div class="form-group">
+                    <label for="contact-website">Website URL (excluding https://)</label>
+                    <input type="text" id="contact-website" oninput="markDirty()">
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Floating Save Indicator Bar -->
+    <div class="save-bar" id="saveBar">
+        <div class="save-bar-text">You have <span>unsaved changes</span> on this page.</div>
+        <button class="btn" onclick="saveData()">Save Changes</button>
+        <button class="btn btn-outline" onclick="discardChanges()">Discard</button>
+    </div>
+
+    <!-- Work Edit Modal -->
+    <div class="modal" id="workModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="feed-item-title" id="modalTitle">Edit Work Item</h3>
+                <button class="skill-tag-delete" onclick="closeWorkModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="work-id">
+                <div class="form-group">
+                    <label for="work-title">Title</label>
+                    <input type="text" id="work-title">
+                </div>
+                <div class="row-grid">
+                    <div class="form-group">
+                        <label for="work-category">Category</label>
+                        <select id="work-category" onchange="updateCategoryLabel()">
+                            <option value="projects">Projects</option>
+                            <option value="research">Research</option>
+                            <option value="poems">Poems</option>
+                            <option value="analysis">Analysis</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="work-category-label">Category Subtitle (Optional)</label>
+                        <input type="text" id="work-category-label" placeholder="Projects / Furniture Design">
+                    </div>
+                </div>
+                <div class="row-grid">
+                    <div class="form-group">
+                        <label for="work-date">Release Date</label>
+                        <input type="text" id="work-date" placeholder="June 18, 2026">
+                    </div>
+                    <div class="form-group">
+                        <label for="work-preview">Preview Asset (e.g. assets/name.jpg or svg-furniture)</label>
+                        <input type="text" id="work-preview" placeholder="svg-furniture">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="work-link">Detail Link / Post URL</label>
+                    <input type="text" id="work-link" placeholder="posts/my-post.html">
+                </div>
+                <div class="form-group">
+                    <label for="work-description">General Description</label>
+                    <textarea id="work-description"></textarea>
+                </div>
+                <div class="form-group" style="display: flex; align-items: center; gap: 10px; margin-top: 1.5rem;">
+                    <input type="checkbox" id="work-featured" onchange="toggleFeaturedSection(this.checked)" style="width: 18px; height: 18px; accent-color: var(--accent);">
+                    <label for="work-featured" style="margin-bottom: 0; cursor: pointer; font-size: 0.85rem;">Display in Homepage Featured Section</label>
+                </div>
+                <div class="form-group" id="featured-details-block" style="display: none;">
+                    <label for="work-featured-desc">Homepage Card Description (Keep concise)</label>
+                    <textarea id="work-featured-desc" placeholder="A short description for the homepage card."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="closeWorkModal()">Cancel</button>
+                <button class="btn" onclick="commitWorkModal()">Apply Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Banner -->
+    <div id="toast" class="toast">Changes saved successfully!</div>
+
+    <script>
+        let db = { hero: {}, contact: {}, skills: [], feed: [] };
+        let isDirty = false;
+        let activeTab = 'hero';
+        let serverMode = false;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            checkConnection();
+        });
+
+        function showToast(message, isError = false) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            if (isError) {
+                toast.classList.add('error');
+            } else {
+                toast.classList.remove('error');
+            }
+            toast.classList.add('active');
+            setTimeout(() => {
+                toast.classList.remove('active');
+            }, 3000);
+        }
+
+        function checkConnection() {
+            const statusBadge = document.getElementById('connectionStatus');
+            const statusText = document.getElementById('connectionText');
+
+            fetch('/api/content')
+                .then(res => {
+                    if (!res.ok) throw new Error();
+                    return res.json();
+                })
+                .then(data => {
+                    db = data;
+                    serverMode = true;
+                    statusBadge.className = 'status-badge';
+                    statusText.textContent = 'Server Connected (Disk Save Active)';
+                    loadFields();
+                })
+                .catch(() => {
+                    serverMode = false;
+                    statusBadge.className = 'status-badge offline';
+                    statusText.textContent = 'Local Cache Only (Server Offline)';
+                    
+                    // Try to load from LocalStorage
+                    const cached = localStorage.getItem('sukrit_portfolio_content');
+                    if (cached) {
+                        db = JSON.parse(cached);
+                        showToast('Loaded content from local storage cache');
+                    } else {
+                        showToast('Could not reach local server. Using default template.', true);
+                    }
+                    loadFields();
+                });
+        }
+
+        function loadFields() {
+            // Hero
+            document.getElementById('hero-greeting').value = db.hero.greeting || '';
+            document.getElementById('hero-name').value = db.hero.name || '';
+            document.getElementById('hero-title').value = db.hero.title || '';
+            document.getElementById('hero-intro').value = db.hero.intro || '';
+
+            // Contact
+            document.getElementById('contact-email').value = db.contact.email || '';
+            document.getElementById('contact-location').value = db.contact.location || '';
+            document.getElementById('contact-website').value = db.contact.website || '';
+
+            // Render components
+            renderFeed();
+            renderSkills();
+        }
+
+        function switchTab(tabName) {
+            activeTab = tabName;
+            document.querySelectorAll('.tab-content').forEach(panel => {
+                panel.style.display = 'none';
+            });
+            document.getElementById(`tab-${tabName}`).style.display = 'block';
+
+            document.querySelectorAll('.sidebar-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Highlight the correct tab button
+            const btnIndex = ['hero', 'feed', 'skills', 'contact'].indexOf(tabName);
+            document.querySelectorAll('.sidebar-btn')[btnIndex].classList.add('active');
+        }
+
+        function markDirty() {
+            isDirty = true;
+            document.getElementById('saveBar').classList.add('active');
+        }
+
+        function discardChanges() {
+            isDirty = false;
+            document.getElementById('saveBar').classList.remove('active');
+            checkConnection(); // Reload
+        }
+
+        // Render Works Feed
+        function renderFeed() {
+            const container = document.getElementById('feedListContainer');
+            container.innerHTML = '';
+
+            db.feed.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'feed-item-card';
+                card.innerHTML = `
+                    <div class="feed-item-meta">
+                        <div class="feed-item-title">${item.title}</div>
+                        <div class="feed-item-sub">
+                            <span>${item.date}</span>
+                            <span>Category: ${item.categoryLabel || item.category}</span>
+                            ${item.featured ? '<span style="color: var(--accent); font-weight: 500;">★ Featured</span>' : ''}
+                        </div>
+                    </div>
+                    <div class="feed-item-actions">
+                        <button class="btn btn-outline" style="padding: 6px 12px; font-size: 0.75rem;" onclick="openWorkModal('${item.id}')">Edit</button>
+                        <button class="btn btn-outline btn-danger" style="padding: 6px 12px; font-size: 0.75rem; border-color: var(--danger);" onclick="deleteWork('${item.id}')">Delete</button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Render Skills
+        function renderSkills() {
+            const container = document.getElementById('skillsListContainer');
+            container.innerHTML = '';
+
+            db.skills.forEach((skill, index) => {
+                const card = document.createElement('div');
+                card.className = 'skill-tag-card';
+                card.innerHTML = `
+                    <div class="skill-tag-info">
+                        <span class="skill-tag-code">${skill.code}</span>
+                        <span class="skill-tag-name">${skill.name}</span>
+                    </div>
+                    <button class="skill-tag-delete" onclick="deleteSkill(${index})">&times;</button>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function addSkill() {
+            const codeEl = document.getElementById('new-skill-code');
+            const nameEl = document.getElementById('new-skill-name');
+            const code = codeEl.value.trim();
+            const name = nameEl.value.trim();
+
+            if (!code || !name) {
+                showToast('Please fill in both skill fields', true);
+                return;
+            }
+
+            db.skills.push({ code, name });
+            codeEl.value = '';
+            nameEl.value = '';
+            renderSkills();
+            markDirty();
+        }
+
+        function deleteSkill(index) {
+            db.skills.splice(index, 1);
+            renderSkills();
+            markDirty();
+        }
+
+        // Add/Edit Work Modal
+        function openWorkModal(id = null) {
+            const modal = document.getElementById('workModal');
+            const titleEl = document.getElementById('modalTitle');
+            
+            // Clear fields
+            document.getElementById('work-id').value = '';
+            document.getElementById('work-title').value = '';
+            document.getElementById('work-category').value = 'projects';
+            document.getElementById('work-category-label').value = '';
+            document.getElementById('work-date').value = '';
+            document.getElementById('work-preview').value = '';
+            document.getElementById('work-link').value = '';
+            document.getElementById('work-description').value = '';
+            document.getElementById('work-featured').checked = false;
+            document.getElementById('work-featured-desc').value = '';
+            document.getElementById('featured-details-block').style.display = 'none';
+
+            if (id) {
+                titleEl.textContent = 'Edit Work Item';
+                const item = db.feed.find(x => x.id === id);
+                if (item) {
+                    document.getElementById('work-id').value = item.id;
+                    document.getElementById('work-title').value = item.title || '';
+                    document.getElementById('work-category').value = item.category || 'projects';
+                    document.getElementById('work-category-label').value = item.categoryLabel || '';
+                    document.getElementById('work-date').value = item.date || '';
+                    document.getElementById('work-preview').value = item.preview || '';
+                    document.getElementById('work-link').value = item.link || '';
+                    document.getElementById('work-description').value = item.description || '';
+                    document.getElementById('work-featured').checked = !!item.featured;
+                    document.getElementById('work-featured-desc').value = item.featuredDesc || '';
+                    
+                    if (item.featured) {
+                        document.getElementById('featured-details-block').style.display = 'block';
+                    }
+                }
+            } else {
+                titleEl.textContent = 'Add New Work';
+            }
+
+            modal.classList.add('active');
+        }
+
+        function closeWorkModal() {
+            document.getElementById('workModal').classList.remove('active');
+        }
+
+        function updateCategoryLabel() {
+            const select = document.getElementById('work-category');
+            const labelInput = document.getElementById('work-category-label');
+            const selectedText = select.options[select.selectedIndex].text;
+            
+            if (labelInput.value === '') {
+                labelInput.placeholder = `${selectedText} / Subcategory`;
+            }
+        }
+
+        function toggleFeaturedSection(checked) {
+            document.getElementById('featured-details-block').style.display = checked ? 'block' : 'none';
+        }
+
+        function commitWorkModal() {
+            const id = document.getElementById('work-id').value;
+            const title = document.getElementById('work-title').value.trim();
+            const category = document.getElementById('work-category').value;
+            let categoryLabel = document.getElementById('work-category-label').value.trim();
+            const date = document.getElementById('work-date').value.trim() || new Date().toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
+            let preview = document.getElementById('work-preview').value.trim();
+            const link = document.getElementById('work-link').value.trim();
+            const description = document.getElementById('work-description').value.trim();
+            const featured = document.getElementById('work-featured').checked;
+            const featuredDesc = document.getElementById('work-featured-desc').value.trim();
+
+            if (!title || !description) {
+                showToast('Title and Description are required', true);
+                return;
+            }
+
+            // Defaults
+            if (!preview) {
+                if (category === 'projects') preview = 'svg-furniture';
+                else if (category === 'research') preview = 'svg-symbolism';
+                else if (category === 'poems') preview = 'assets/echoes_of_silence.jpg';
+                else if (category === 'analysis') preview = 'svg-finance';
+            }
+            if (!categoryLabel) {
+                categoryLabel = category.charAt(0).toUpperCase() + category.slice(1);
+            }
+
+            const itemData = {
+                id: id || String(Date.now()),
+                title,
+                category,
+                categoryLabel,
+                date,
+                preview,
+                link,
+                description,
+                featured,
+                featuredDesc: featured ? featuredDesc || description : undefined
+            };
+
+            if (id) {
+                const index = db.feed.findIndex(x => x.id === id);
+                if (index !== -1) {
+                    db.feed[index] = itemData;
+                }
+            } else {
+                db.feed.push(itemData);
+            }
+
+            closeWorkModal();
+            renderFeed();
+            markDirty();
+        }
+
+        function deleteWork(id) {
+            if (confirm('Are you sure you want to delete this work item?')) {
+                db.feed = db.feed.filter(x => x.id !== id);
+                renderFeed();
+                markDirty();
+            }
+        }
+
+        // Save entire database
+        function saveData() {
+            // Apply current inputs for safety
+            db.hero.greeting = document.getElementById('hero-greeting').value.trim();
+            db.hero.name = document.getElementById('hero-name').value.trim();
+            db.hero.title = document.getElementById('hero-title').value.trim();
+            db.hero.intro = document.getElementById('hero-intro').value.trim();
+
+            db.contact.email = document.getElementById('contact-email').value.trim();
+            db.contact.location = document.getElementById('contact-location').value.trim();
+            db.contact.website = document.getElementById('contact-website').value.trim();
+
+            if (serverMode) {
+                fetch('/api/save', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(db)
+                })
+                .then(res => {
+                    if (!res.ok) throw new Error();
+                    return res.json();
+                })
+                .then(() => {
+                    isDirty = false;
+                    document.getElementById('saveBar').classList.remove('active');
+                    showToast('Changes saved to disk and pages compiled!');
+                })
+                .catch(() => {
+                    showToast('Server write failed. Cache updated.', true);
+                    cacheLocally();
+                });
+            } else {
+                cacheLocally();
+            }
+        }
+
+        function cacheLocally() {
+            localStorage.setItem('sukrit_portfolio_content', JSON.stringify(db));
+            isDirty = false;
+            document.getElementById('saveBar').classList.remove('active');
+            showToast('Saved locally. Server offline, compile disabled.');
+            
+            // Offer config JSON download
+            const blob = new Blob([JSON.stringify(db, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'content.json';
+            a.innerText = 'Download content.json Backup';
+            a.style.display = 'block';
+            a.style.marginTop = '1rem';
+            a.style.color = 'var(--accent)';
+            a.style.textAlign = 'center';
+            
+            const existingDownload = document.getElementById('backupDownloadBtn');
+            if (existingDownload) existingDownload.remove();
+            
+            a.id = 'backupDownloadBtn';
+            document.querySelector('.content-panel').appendChild(a);
+        }
+    </script>
+</body>
+</html>

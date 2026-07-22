@@ -1,0 +1,11 @@
+{
+  "name": "sukritkomalla-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website with local developer studio",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {}
+}

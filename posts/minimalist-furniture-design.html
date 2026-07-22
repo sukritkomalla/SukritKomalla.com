@@ -9,7 +9,7 @@
 </head>
 <body>
 
-            <!-- Header Navigation Section -->
+                <!-- Header Navigation Section -->
     <header>
         <div class="container navbar">
             <div class="logo">
@@ -88,7 +88,7 @@
         </div>
     </section>
 
-        <!-- Footer -->
+            <!-- Footer -->
     <footer>
         <div class="container footer-content">
             <div class="footer-copy">
@@ -102,6 +102,48 @@
         </div>
     </footer>
 
-    <script src="../script.js"></script>
+        <script src="../script.js"></script>
+    <!-- Developer Mode Trigger -->
+    <script>
+      (function() {
+        const isLocal = window.location.hostname === 'localhost' || 
+                        window.location.hostname === '127.0.0.1' || 
+                        window.location.hostname === '[::1]' ||
+                        window.location.port === '3000';
+        if (isLocal) {
+          const devBtn = document.createElement('a');
+          devBtn.href = '../developer.html';
+          devBtn.innerText = 'Dev Studio';
+          devBtn.style.position = 'fixed';
+          devBtn.style.bottom = '20px';
+          devBtn.style.right = '20px';
+          devBtn.style.backgroundColor = '#121A24';
+          devBtn.style.color = '#E5DED4';
+          devBtn.style.padding = '10px 18px';
+          devBtn.style.borderRadius = '30px';
+          devBtn.style.fontFamily = 'Inter, sans-serif';
+          devBtn.style.fontSize = '0.8rem';
+          devBtn.style.fontWeight = '500';
+          devBtn.style.textDecoration = 'none';
+          devBtn.style.boxShadow = '0 4px 12px rgba(18, 26, 36, 0.15)';
+          devBtn.style.zIndex = '9999';
+          devBtn.style.transition = 'all 0.3s ease';
+          devBtn.style.border = '1px solid rgba(229, 222, 212, 0.2)';
+          
+          devBtn.onmouseenter = () => {
+            devBtn.style.backgroundColor = '#B07A65';
+            devBtn.style.color = '#121A24';
+            devBtn.style.transform = 'translateY(-2px)';
+          };
+          devBtn.onmouseleave = () => {
+            devBtn.style.backgroundColor = '#121A24';
+            devBtn.style.color = '#E5DED4';
+            devBtn.style.transform = 'translateY(0)';
+          };
+          
+          document.body.appendChild(devBtn);
+        }
+      })();
+    </script>
 </body>
 </html>

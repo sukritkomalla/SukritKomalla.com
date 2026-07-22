@@ -1,0 +1,85 @@
+{
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Sukrit<br>Komalla",
+    "title": "Creative Portfolio",
+    "intro": "I craft elegant, high-performing digital works that blend research, creative analysis, system thinking, and user-centered design."
+  },
+  "contact": {
+    "email": "sukrit.komalla@gmail.com",
+    "location": "Sweden",
+    "website": "sukritkomalla.com"
+  },
+  "skills": [
+    {
+      "code": "Py",
+      "name": "Python"
+    },
+    {
+      "code": "Git",
+      "name": "Git Control"
+    },
+    {
+      "code": "An",
+      "name": "Analysis"
+    },
+    {
+      "code": "Sy",
+      "name": "Systems"
+    },
+    {
+      "code": "H5",
+      "name": "HTML5"
+    },
+    {
+      "code": "C3",
+      "name": "CSS3"
+    },
+    {
+      "code": "JS",
+      "name": "Javascript"
+    },
+    {
+      "code": "Ds",
+      "name": "Design"
+    }
+  ],
+  "feed": [
+    {
+      "id": "furniture",
+      "title": "Minimalist Furniture Design",
+      "category": "projects",
+      "categoryLabel": "Projects",
+      "date": "June 18, 2026",
+      "preview": "assets/furniture_preview.jpg",
+      "link": "posts/minimalist-furniture-design.html",
+      "description": "An exploration of functional minimalism. Analyzing structural balance and modern aesthetic theories using warm oakwood and welded steel frames.",
+      "featured": true,
+      "featuredDesc": "An exploration of functional minimalism combining warm oakwood and welded steel frames."
+    },
+    {
+      "id": "poetry-research",
+      "title": "Symbolism in Modern Poetry",
+      "category": "research",
+      "categoryLabel": "Research",
+      "date": "April 05, 2026",
+      "preview": "assets/poetry_preview.jpg",
+      "link": "posts/symbolism-in-modern-poetry.html",
+      "description": "A literary thesis decoding hidden linguistic structures and metaphorical frameworks in mid-century expressionist poems.",
+      "featured": true,
+      "featuredDesc": "A literary analysis decoding hidden linguistic structures in mid-century expressionist poems."
+    },
+    {
+      "id": "finance-analysis",
+      "title": "Financial Market Trends",
+      "category": "analysis",
+      "categoryLabel": "Analysis",
+      "date": "January 29, 2026",
+      "preview": "assets/market_preview.jpg",
+      "link": "posts/financial-market-trends.html",
+      "description": "A data-driven deep dive into systemic interest rate changes and their cascading effects on seed-stage technology investments.",
+      "featured": true,
+      "featuredDesc": "A data-driven deep dive into interest rate changes and seed-stage technology investments."
+    }
+  ]
+}
