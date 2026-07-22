@@ -9,16 +9,12 @@
 </head>
 <body>
 
-    <!-- Header Navigation Section exactly matching reference -->
-    <header class="container">
-        <div class="navbar">
-            <div class="nav-left">Sukrit Komalla</div>
-            <div class="nav-center">Portfolio</div>
-            <div class="nav-right">
-                <a href="mailto:hello@sukritkomalla.com">Available for projects &rarr;</a>
+    <!-- Header Navigation Section -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <a href="index.html">Sukrit Komalla<span>.</span></a>
             </div>
-        </div>
-        <div class="sub-nav">
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
                 <span></span>
                 <span></span>
@@ -26,11 +22,14 @@
             </button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="archive.html">Archive</a></li>
-                <li><a href="index.html#process">Process</a></li>
-                <li><a href="index.html#skills">Skills</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="photography.html">Photography</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="nav-right">
+                <a href="mailto:hello@sukritkomalla.com">Available for projects &rarr;</a>
+            </div>
         </div>
     </header>
 
@@ -44,19 +43,24 @@
 
             <!-- Left column text -->
             <div class="hero-col-1">
+<!-- DEV-EDIT: HERO-GREETING -->
                 <span class="hero-greeting">Hello, I'm</span>
+<!-- DEV-EDIT-END: HERO-GREETING -->
+<!-- DEV-EDIT: HERO-NAME -->
                 <h1 class="hero-name">Sukrit<br>Komalla</h1>
-                <div class="hero-title-sub">Creative Portfolio</div>
+<!-- DEV-EDIT-END: HERO-NAME -->
+                <!-- DEV-EDIT: HERO-INTRO -->
                 <p class="hero-intro-para">
                     I craft elegant, high-performing digital works that blend research, creative analysis, system thinking, and user-centered design.
                 </p>
+<!-- DEV-EDIT-END: HERO-INTRO -->
                 <div class="hero-signature">Sukrit Komalla</div>
             </div>
 
             <!-- Isolated photo portrait column -->
             <div class="hero-col-2">
                 <div class="hero-portrait-frame">
-                    <img src="assets/sukrit_portrait.jpg" alt="Sukrit Komalla Portrait" class="hero-portrait-img">
+                    <img src="assets/sukrit_portrait.png" alt="Sukrit Komalla Portrait" class="hero-portrait-img">
                     <div class="badge-circle">
                         <span class="badge-text-top">Available for</span>
                         <span class="badge-text-center">2026</span>
@@ -77,8 +81,8 @@
                         <div class="hero-bullet-desc">financial market trends and core algorithms.</div>
                     </li>
                     <li class="hero-bullet-item">
-                        <div class="hero-bullet-title">Writing</div>
-                        <div class="hero-bullet-desc">expressive poems on isolation and structure.</div>
+                        <div class="hero-bullet-title">Designing</div>
+                        <div class="hero-bullet-desc">minimalist furniture and physical systems.</div>
                     </li>
                 </ul>
             </div>
@@ -94,70 +98,72 @@
             </div>
 
             <div class="featured-grid">
-                <!-- Project 1 -->
+<!-- DEV-EDIT: FEATURED-PIECES -->
+                <!-- Project 01 -->
                 <a href="posts/minimalist-furniture-design.html" class="work-card">
                     <div class="work-card-img-wrap">
-                        <svg width="100%" height="100%" viewBox="0 0 400 300" style="background:#17212E">
+                        <svg width="100%" height="100%" viewBox="0 0 400 300" style="background:#1b2735">
                             <rect width="100%" height="100%" fill="#1b2735"/>
                             <line x1="50" y1="50" x2="350" y2="250" stroke="#FAF8F5" stroke-opacity="0.1" stroke-width="2"/>
                             <line x1="350" y1="50" x2="50" y2="250" stroke="#FAF8F5" stroke-opacity="0.1" stroke-width="2"/>
-                            <rect x="120" y="80" width="160" height="140" fill="none" stroke="#FAF8F5" stroke-opacity="0.2" stroke-width="2"/>
-                            <text x="50%" y="52%" font-family="'Cormorant Garamond', serif" font-size="1.5rem" font-style="italic" fill="#FAF8F5" text-anchor="middle" opacity="0.7">Minimalist Console</text>
+                            <text x="50%" y="52%" font-family="'Cormorant Garamond', serif" font-size="1.5rem" font-style="italic" fill="#FAF8F5" text-anchor="middle" opacity="0.7">Minimalist Furniture Design</text>
                         </svg>
                     </div>
                     <div class="work-card-info">
                         <span class="work-card-num">01</span>
                         <div class="work-card-text">
-                            <h3 class="work-card-title">Minimalist Furniture</h3>
-                            <span class="work-card-category">Projects / Furniture Design</span>
+                            <h3 class="work-card-title">Minimalist Furniture Design</h3>
+                            <span class="work-card-category">Projects</span>
                             <p class="work-card-desc">An exploration of functional minimalism combining warm oakwood and welded steel frames.</p>
                         </div>
                         <div class="work-card-arrow">&rarr;</div>
                     </div>
                 </a>
 
-                <!-- Project 2 -->
+                <!-- Project 02 -->
                 <a href="posts/symbolism-in-modern-poetry.html" class="work-card">
                     <div class="work-card-img-wrap">
-                        <svg width="100%" height="100%" viewBox="0 0 400 300" style="background:#17212E">
+                        <svg width="100%" height="100%" viewBox="0 0 400 300" style="background:#1f2c3b">
                             <rect width="100%" height="100%" fill="#1f2c3b"/>
-                            <circle cx="200" cy="150" r="80" fill="none" stroke="#FAF8F5" stroke-opacity="0.15" stroke-width="1.5"/>
-                            <line x1="200" y1="40" x2="200" y2="260" stroke="#FAF8F5" stroke-opacity="0.1" stroke-width="1"/>
-                            <line x1="70" y1="150" x2="330" y2="150" stroke="#FAF8F5" stroke-opacity="0.1" stroke-width="1"/>
-                            <text x="50%" y="52%" font-family="'Cormorant Garamond', serif" font-size="1.5rem" font-style="italic" fill="#FAF8F5" text-anchor="middle" opacity="0.7">Modern Symbolism</text>
+                            <line x1="50" y1="50" x2="350" y2="250" stroke="#FAF8F5" stroke-opacity="0.1" stroke-width="2"/>
+                            <line x1="350" y1="50" x2="50" y2="250" stroke="#FAF8F5" stroke-opacity="0.1" stroke-width="2"/>
+                            <text x="50%" y="52%" font-family="'Cormorant Garamond', serif" font-size="1.5rem" font-style="italic" fill="#FAF8F5" text-anchor="middle" opacity="0.7">Symbolism in Modern Poetry</text>
                         </svg>
                     </div>
                     <div class="work-card-info">
                         <span class="work-card-num">02</span>
                         <div class="work-card-text">
-                            <h3 class="work-card-title">Poetic Symbolism</h3>
-                            <span class="work-card-category">Research / Literary Thesis</span>
+                            <h3 class="work-card-title">Symbolism in Modern Poetry</h3>
+                            <span class="work-card-category">Research</span>
                             <p class="work-card-desc">A literary analysis decoding hidden linguistic structures in mid-century expressionist poems.</p>
                         </div>
                         <div class="work-card-arrow">&rarr;</div>
                     </div>
                 </a>
 
-                <!-- Project 3 -->
-                <a href="posts/silence-of-the-sea.html" class="work-card">
+                <!-- Project 03 -->
+                <a href="posts/financial-market-trends.html" class="work-card">
                     <div class="work-card-img-wrap">
                         <svg width="100%" height="100%" viewBox="0 0 400 300" style="background:#17212E">
                             <rect width="100%" height="100%" fill="#17212E"/>
-                            <path d="M 50 150 Q 125 100 200 150 T 350 150" fill="none" stroke="#FAF8F5" stroke-opacity="0.15" stroke-width="2"/>
-                            <path d="M 50 180 Q 125 130 200 180 T 350 180" fill="none" stroke="#FAF8F5" stroke-opacity="0.1" stroke-width="2"/>
-                            <text x="50%" y="52%" font-family="'Cormorant Garamond', serif" font-size="1.5rem" font-style="italic" fill="#FAF8F5" text-anchor="middle" opacity="0.7">Silence of the Sea</text>
+                            <path d="M 50 250 L 120 180 L 190 210 L 260 120 L 350 80" fill="none" stroke="#FAF8F5" stroke-opacity="0.2" stroke-width="3"/>
+                            <circle cx="120" cy="180" r="4" fill="#B07A65"/>
+                            <circle cx="260" cy="120" r="4" fill="#B07A65"/>
+                            <circle cx="350" cy="80" r="4" fill="#B07A65"/>
+                            <text x="50%" y="52%" font-family="'Cormorant Garamond', serif" font-size="1.5rem" font-style="italic" fill="#FAF8F5" text-anchor="middle" opacity="0.7">Market Analysis</text>
                         </svg>
                     </div>
                     <div class="work-card-info">
                         <span class="work-card-num">03</span>
                         <div class="work-card-text">
-                            <h3 class="work-card-title">Silence of the Sea</h3>
-                            <span class="work-card-category">Poems / Free Verse</span>
-                            <p class="work-card-desc">An expressive, free-verse poem capturing themes of coastal solitude and sand patterns.</p>
+                            <h3 class="work-card-title">Market Analysis</h3>
+                            <span class="work-card-category">Analysis</span>
+                            <p class="work-card-desc">A data-driven deep dive into interest rate changes and seed-stage technology investments.</p>
                         </div>
                         <div class="work-card-arrow">&rarr;</div>
                     </div>
                 </a>
+<!-- DEV-EDIT-END: FEATURED-PIECES -->
             </div>
         </div>
     </section>
@@ -206,6 +212,7 @@
             <h2 class="split-title">Tools & Skills</h2>
             
             <div class="skills-grid">
+<!-- DEV-EDIT: SKILLS -->
                 <div class="skill-item">
                     <div class="skill-icon-placeholder">Py</div>
                     <span class="skill-name">Python</span>
@@ -219,8 +226,8 @@
                     <span class="skill-name">Analysis</span>
                 </div>
                 <div class="skill-item">
-                    <div class="skill-icon-placeholder">Lt</div>
-                    <span class="skill-name">Literature</span>
+                    <div class="skill-icon-placeholder">Sy</div>
+                    <span class="skill-name">Systems</span>
                 </div>
                 <div class="skill-item">
                     <div class="skill-icon-placeholder">H5</div>
@@ -238,6 +245,7 @@
                     <div class="skill-icon-placeholder">Ds</div>
                     <span class="skill-name">Design</span>
                 </div>
+<!-- DEV-EDIT-END: SKILLS -->
             </div>
 
             <p class="skills-footer-quote">
@@ -259,7 +267,7 @@
                 
                 <!-- Beautiful arched portrait -->
                 <div class="collab-visual-frame">
-                    <img src="assets/sukrit_portrait.jpg" alt="Sukrit Komalla Arched portrait" class="collab-portrait-img">
+                    <img src="assets/sukrit_portrait.png" alt="Sukrit Komalla Arched portrait" class="collab-portrait-img">
                 </div>
             </div>
 
@@ -267,23 +275,25 @@
             <div class="collab-right">
                 <h3 class="collab-title">Let's Collaborate</h3>
                 <p class="collab-desc">
-                    I'm currently open to collaborative research assignments, project contributions, systems analysis, or creative literary projects.
+                    I'm currently open to collaborative research assignments, project contributions, systems analysis, or design strategy.
                 </p>
 
                 <!-- Detailed contact rows list -->
                 <div class="contact-table">
-                    <div class="contact-row">
-                        <span class="contact-label">Email</span>
-                        <span class="contact-value"><a href="mailto:hello@sukritkomalla.com">hello@sukritkomalla.com</a></span>
-                    </div>
-                    <div class="contact-row">
-                        <span class="contact-label">Location</span>
-                        <span class="contact-value">Worldwide (Remote)</span>
-                    </div>
-                    <div class="contact-row">
-                        <span class="contact-label">Website</span>
-                        <span class="contact-value"><a href="https://sukritkomalla.com">sukritkomalla.com</a></span>
-                    </div>
+<!-- DEV-EDIT: CONTACT -->
+                <div class="contact-row">
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value"><a href="mailto:hello@sukritkomalla.com">hello@sukritkomalla.com</a></span>
+                </div>
+                <div class="contact-row">
+                    <span class="contact-label">Location</span>
+                    <span class="contact-value">Worldwide (Remote)</span>
+                </div>
+                <div class="contact-row">
+                    <span class="contact-label">Website</span>
+                    <span class="contact-value"><a href="https://sukritkomalla.com">sukritkomalla.com</a></span>
+                </div>
+<!-- DEV-EDIT-END: CONTACT -->
                 </div>
 
                 <!-- Custom Interactive QR Card -->
@@ -315,17 +325,61 @@
         </div>
     </section>
 
-    <!-- Footer rows -->
+    <!-- Footer -->
     <footer>
-        <div class="container footer-inner">
-            <span>&copy; 2026 Sukrit Komalla. All rights reserved.</span>
-            <div class="footer-right">
-                <span>Designed with passion</span>
-                <span class="footer-heart">&hearts;</span>
+        <div class="container footer-content">
+            <div class="footer-copy">
+                &copy; 2026 Sukrit Komalla. All rights reserved.
             </div>
+            <ul class="footer-socials">
+                <li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a></li>
+            </ul>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <!-- Developer Mode Floating Trigger -->
+    <script>
+      (function() {
+        const isLocal = window.location.hostname === 'localhost' || 
+                        window.location.hostname === '127.0.0.1' || 
+                        window.location.hostname === '[::1]';
+        if (isLocal) {
+          const devBtn = document.createElement('a');
+          devBtn.href = 'developer.html';
+          devBtn.innerText = 'Dev Studio';
+          devBtn.style.position = 'fixed';
+          devBtn.style.bottom = '20px';
+          devBtn.style.right = '20px';
+          devBtn.style.backgroundColor = '#121A24';
+          devBtn.style.color = '#E5DED4';
+          devBtn.style.padding = '10px 18px';
+          devBtn.style.borderRadius = '30px';
+          devBtn.style.fontFamily = 'Inter, sans-serif';
+          devBtn.style.fontSize = '0.8rem';
+          devBtn.style.fontWeight = '500';
+          devBtn.style.textDecoration = 'none';
+          devBtn.style.boxShadow = '0 4px 12px rgba(18, 26, 36, 0.15)';
+          devBtn.style.zIndex = '9999';
+          devBtn.style.transition = 'all 0.3s ease';
+          devBtn.style.border = '1px solid rgba(229, 222, 212, 0.2)';
+          
+          devBtn.onmouseenter = () => {
+            devBtn.style.backgroundColor = '#B07A65';
+            devBtn.style.color = '#121A24';
+            devBtn.style.transform = 'translateY(-2px)';
+          };
+          devBtn.onmouseleave = () => {
+            devBtn.style.backgroundColor = '#121A24';
+            devBtn.style.color = '#E5DED4';
+            devBtn.style.transform = 'translateY(0)';
+          };
+          
+          document.body.appendChild(devBtn);
+        }
+      })();
+    </script>
 </body>
 </html>
