@@ -216,7 +216,7 @@ header {
     text-transform: uppercase;
     line-height: 0.8;
     letter-spacing: -2px;
-    color: var(--color-text-main);
+    color: #0B131F;
     pointer-events: none;
     text-align: justify;
     display: flex;
@@ -2041,8 +2041,198 @@ footer {
         padding: 2.5rem 1rem;
     }
     .photo-delete-btn {
-        opacity: 1;
         visibility: visible; /* Always visible on mobile since no hover exists */
+    }
+}
+
+/* ==========================================================================
+   Antigravity Animation Suite
+   ========================================================================== */
+
+/* Cursor-Tracking Spotlight Effect */
+.hero {
+    background: radial-gradient(circle 600px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(176, 122, 101, 0.08), transparent 80%), var(--bg-primary);
+    transition: background 0.15s ease-out;
+}
+
+/* Backdrop Letter-by-Letter Entrance */
+.hero-backdrop-title span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(60px) scale(0.9);
+    animation: backdropLetterReveal 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(var(--char-index, 0) * 0.08s + 0.1s);
+}
+
+@keyframes backdropLetterReveal {
+    to {
+        opacity: 0.18;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Page Load Text Reveal */
+.reveal-on-load {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: revealOnLoad 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.reveal-on-load.reveal-delay-1 { animation-delay: 0.15s; }
+.reveal-on-load.reveal-delay-2 { animation-delay: 0.3s; }
+.reveal-on-load.reveal-delay-3 { animation-delay: 0.45s; }
+.reveal-on-load.reveal-delay-4 { animation-delay: 0.6s; }
+
+@keyframes revealOnLoad {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Portrait vertical clip-reveal */
+.hero-portrait-frame.clip-reveal {
+    clip-path: inset(100% 0 0 0);
+    transform: scale(1.08) translateY(10px);
+    animation: clipRevealImg 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes clipRevealImg {
+    to {
+        clip-path: inset(0 0 0 0);
+        transform: scale(1.02) translateY(0);
+    }
+}
+
+/* Scroll-based reveals */
+.reveal-on-scroll {
+    opacity: 0;
+    transition: opacity 1.0s cubic-bezier(0.16, 1, 0.3, 1), transform 1.0s cubic-bezier(0.16, 1, 0.3, 1), clip-path 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform, clip-path;
+}
+
+.reveal-on-scroll.fade-up {
+    transform: translateY(40px);
+}
+
+.reveal-on-scroll.fade-in {
+    transform: scale(0.97);
+}
+
+.reveal-on-scroll.clip-reveal-scroll {
+    clip-path: inset(100% 0 0 0);
+}
+
+.reveal-on-scroll.revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    clip-path: inset(0 0 0 0);
+}
+
+/* Process Timeline Card Hover Effects */
+.process-step {
+    position: relative;
+    transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    overflow: hidden;
+}
+
+.process-step:hover {
+    background-color: rgba(176, 122, 101, 0.05) !important;
+    border-color: var(--color-accent) !important;
+    transform: translateY(-6px);
+    z-index: 10;
+}
+
+.process-step::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.process-step:hover::after {
+    transform: scaleX(1);
+}
+
+.process-num {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.process-step:hover .process-num {
+    transform: translateY(-3px) scale(1.05);
+    color: var(--color-accent);
+}
+
+/* Skills/Tools Icon Hover Enhancements */
+.skill-icon-placeholder {
+    transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.skill-icon-placeholder:hover {
+    background-color: var(--color-accent) !important;
+    color: #121A24 !important;
+    border-color: var(--color-accent) !important;
+    transform: translateY(-8px) scale(1.1) rotate(6deg) !important;
+    box-shadow: 0 10px 20px rgba(176, 122, 101, 0.25);
+}
+
+/* QR Code Card Hover */
+.qr-container-card {
+    transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease !important;
+}
+
+.qr-container-card:hover {
+    border-color: var(--color-accent) !important;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.qr-arrow-indicator {
+    transition: transform 0.3s ease;
+}
+
+.qr-container-card:hover .qr-arrow-indicator {
+    transform: translateX(6px);
+}
+
+.qr-graphic-box {
+    transition: transform 0.4s ease;
+}
+
+.qr-container-card:hover .qr-graphic-box {
+    transform: scale(1.08);
+}
+
+/* Archive Row Smooth Filtering Transitions */
+.archive-row {
+    transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.archive-row.fade-out-item {
+    opacity: 0 !important;
+    transform: translateY(12px) scale(0.98) !important;
+    pointer-events: none;
+}
+
+.archive-row.fade-in-item {
+    animation: archiveRowFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes archiveRowFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
 

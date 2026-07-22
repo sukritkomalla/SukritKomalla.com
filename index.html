@@ -28,7 +28,9 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-right">
-                <a href="mailto:hello@sukritkomalla.com">Available for projects &rarr;</a>
+<!-- DEV-EDIT: CONTACT-EMAIL-LINK -->
+                <a href="mailto:sukrit.komalla@gmail.com">Available for projects &rarr;</a>
+<!-- DEV-EDIT-END: CONTACT-EMAIL-LINK -->
             </div>
         </div>
     </header>
@@ -38,34 +40,34 @@
         <section class="hero">
             <!-- Massive Typography Backdrop Text -->
             <div class="hero-backdrop-title">
-                <span>P</span><span>o</span><span>r</span><span>t</span><span>f</span><span>o</span><span>l</span><span>i</span><span>o</span>
+                <span style="--char-index: 0">P</span><span style="--char-index: 1">o</span><span style="--char-index: 2">r</span><span style="--char-index: 3">t</span><span style="--char-index: 4">f</span><span style="--char-index: 5">o</span><span style="--char-index: 6">l</span><span style="--char-index: 7">i</span><span style="--char-index: 8">o</span>
             </div>
 
             <!-- Left column text -->
             <div class="hero-col-1">
 <!-- DEV-EDIT: HERO-GREETING -->
-                <span class="hero-greeting">Hello, I'm</span>
+                <span class="hero-greeting reveal-on-load reveal-delay-1">Hello, I'm</span>
 <!-- DEV-EDIT-END: HERO-GREETING -->
 <!-- DEV-EDIT: HERO-NAME -->
-                <h1 class="hero-name">Sukrit<br>Komalla</h1>
+                <h1 class="hero-name reveal-on-load reveal-delay-2">Sukrit<br>Komalla</h1>
 <!-- DEV-EDIT-END: HERO-NAME -->
                 <!-- DEV-EDIT: HERO-INTRO -->
-                <p class="hero-intro-para">
+                <p class="hero-intro-para reveal-on-load reveal-delay-3">
                     I craft elegant, high-performing digital works that blend research, creative analysis, system thinking, and user-centered design.
                 </p>
 <!-- DEV-EDIT-END: HERO-INTRO -->
-                <div class="hero-signature">Sukrit Komalla</div>
+                <div class="hero-signature reveal-on-load reveal-delay-4">Sukrit Komalla</div>
             </div>
 
             <!-- Isolated photo portrait column -->
             <div class="hero-col-2">
-                <div class="hero-portrait-frame">
+                <div class="hero-portrait-frame clip-reveal">
                     <img src="assets/sukrit_portrait.png" alt="Sukrit Komalla Portrait" class="hero-portrait-img">
                 </div>
             </div>
 
             <!-- Right column bullet lists -->
-            <div class="hero-col-3">
+            <div class="hero-col-3 reveal-on-load reveal-delay-3">
                 <ul class="hero-bullets-list">
                     <li class="hero-bullet-item">
                         <div class="hero-bullet-title">Researching</div>
@@ -92,9 +94,55 @@
                 <a href="archive.html" class="view-all-link">View All Works &rarr;</a>
             </div>
 
-            <div class="featured-grid">
+            <div class="featured-grid reveal-on-scroll fade-in">
 <!-- DEV-EDIT: FEATURED-PIECES -->
+                <!-- Project 01 -->
+                <a href="posts/minimalist-furniture-design.html" class="work-card reveal-stagger-item fade-up">
+                    <div class="work-card-img-wrap">
+                        <img src="assets/furniture_preview.jpg" alt="Minimalist Furniture Design" style="width:100%; height:100%; object-fit:cover; display:block;">
+                    </div>
+                    <div class="work-card-info">
+                        <span class="work-card-num">01</span>
+                        <div class="work-card-text">
+                            <h3 class="work-card-title">Minimalist Furniture Design</h3>
+                            <span class="work-card-category">Projects</span>
+                            <p class="work-card-desc">An exploration of functional minimalism combining warm oakwood and welded steel frames.</p>
+                        </div>
+                        <div class="work-card-arrow">&rarr;</div>
+                    </div>
+                </a>
 
+                <!-- Project 02 -->
+                <a href="posts/symbolism-in-modern-poetry.html" class="work-card reveal-stagger-item fade-up">
+                    <div class="work-card-img-wrap">
+                        <img src="assets/poetry_preview.jpg" alt="Symbolism in Modern Poetry" style="width:100%; height:100%; object-fit:cover; display:block;">
+                    </div>
+                    <div class="work-card-info">
+                        <span class="work-card-num">02</span>
+                        <div class="work-card-text">
+                            <h3 class="work-card-title">Symbolism in Modern Poetry</h3>
+                            <span class="work-card-category">Research</span>
+                            <p class="work-card-desc">A literary analysis decoding hidden linguistic structures in mid-century expressionist poems.</p>
+                        </div>
+                        <div class="work-card-arrow">&rarr;</div>
+                    </div>
+                </a>
+
+                <!-- Project 03 -->
+                <a href="posts/financial-market-trends.html" class="work-card reveal-stagger-item fade-up">
+                    <div class="work-card-img-wrap">
+                        <img src="assets/market_preview.jpg" alt="Financial Market Trends" style="width:100%; height:100%; object-fit:cover; display:block;">
+                    </div>
+                    <div class="work-card-info">
+                        <span class="work-card-num">03</span>
+                        <div class="work-card-text">
+                            <h3 class="work-card-title">Financial Market Trends</h3>
+                            <span class="work-card-category">Analysis</span>
+                            <p class="work-card-desc">A data-driven deep dive into interest rate changes and seed-stage technology investments.</p>
+                        </div>
+                        <div class="work-card-arrow">&rarr;</div>
+                    </div>
+                </a>
 <!-- DEV-EDIT-END: FEATURED-PIECES -->
             </div>
         </div>
@@ -106,28 +154,28 @@
         <div class="process-column" id="process">
             <h2 class="split-title">My Creative Process</h2>
             
-            <div class="process-timeline">
-                <div class="process-step">
+            <div class="process-timeline reveal-on-scroll">
+                <div class="process-step reveal-stagger-item fade-up">
                     <span class="process-num">01</span>
                     <span class="process-name">Discover</span>
                     <span class="process-desc">Broad reading, systemic observation, and raw ideas.</span>
                 </div>
-                <div class="process-step">
+                <div class="process-step reveal-stagger-item fade-up">
                     <span class="process-num">02</span>
                     <span class="process-name">Analyze</span>
                     <span class="process-desc">Deep structural breakdown and mathematical review.</span>
                 </div>
-                <div class="process-step">
+                <div class="process-step reveal-stagger-item fade-up">
                     <span class="process-num">03</span>
                     <span class="process-name">Draft</span>
                     <span class="process-desc">Prototyping schemas, poems, or geometric layouts.</span>
                 </div>
-                <div class="process-step">
+                <div class="process-step reveal-stagger-item fade-up">
                     <span class="process-num">04</span>
                     <span class="process-name">Refine</span>
                     <span class="process-desc">Pruning unnecessary elements down to essentials.</span>
                 </div>
-                <div class="process-step">
+                <div class="process-step reveal-stagger-item fade-up">
                     <span class="process-num">05</span>
                     <span class="process-name">Deploy</span>
                     <span class="process-desc">Final publishing, execution, and archiving.</span>
@@ -143,37 +191,37 @@
         <div class="skills-column" id="skills">
             <h2 class="split-title">Tools & Skills</h2>
             
-            <div class="skills-grid">
+            <div class="skills-grid reveal-on-scroll">
 <!-- DEV-EDIT: SKILLS -->
-                <div class="skill-item">
+                <div class="skill-item reveal-stagger-item fade-up">
                     <div class="skill-icon-placeholder">Py</div>
                     <span class="skill-name">Python</span>
                 </div>
-                <div class="skill-item">
+                <div class="skill-item reveal-stagger-item fade-up">
                     <div class="skill-icon-placeholder">Git</div>
                     <span class="skill-name">Git Control</span>
                 </div>
-                <div class="skill-item">
+                <div class="skill-item reveal-stagger-item fade-up">
                     <div class="skill-icon-placeholder">An</div>
                     <span class="skill-name">Analysis</span>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-icon-placeholder">Lt</div>
-                    <span class="skill-name">Literature</span>
+                <div class="skill-item reveal-stagger-item fade-up">
+                    <div class="skill-icon-placeholder">Sy</div>
+                    <span class="skill-name">Systems</span>
                 </div>
-                <div class="skill-item">
+                <div class="skill-item reveal-stagger-item fade-up">
                     <div class="skill-icon-placeholder">H5</div>
                     <span class="skill-name">HTML5</span>
                 </div>
-                <div class="skill-item">
+                <div class="skill-item reveal-stagger-item fade-up">
                     <div class="skill-icon-placeholder">C3</div>
                     <span class="skill-name">CSS3</span>
                 </div>
-                <div class="skill-item">
+                <div class="skill-item reveal-stagger-item fade-up">
                     <div class="skill-icon-placeholder">JS</div>
                     <span class="skill-name">Javascript</span>
                 </div>
-                <div class="skill-item">
+                <div class="skill-item reveal-stagger-item fade-up">
                     <div class="skill-icon-placeholder">Ds</div>
                     <span class="skill-name">Design</span>
                 </div>
@@ -198,13 +246,13 @@
                 </h2>
                 
                 <!-- Beautiful arched portrait -->
-                <div class="collab-visual-frame">
+                <div class="collab-visual-frame reveal-on-scroll clip-reveal-scroll">
                     <img src="assets/sukrit_portrait.png" alt="Sukrit Komalla Arched portrait" class="collab-portrait-img">
                 </div>
             </div>
 
             <!-- Right block card contact table with QR code card -->
-            <div class="collab-right">
+            <div class="collab-right reveal-on-scroll fade-up">
                 <h3 class="collab-title">Let's Collaborate</h3>
                 <p class="collab-desc">
                     I'm currently open to collaborative research assignments, project contributions, systems analysis, or design strategy.

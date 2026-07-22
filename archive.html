@@ -22,24 +22,26 @@
             </button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="archive.html" class="active">Archive</a></li>
-                <li><a href="index.html#process">Process</a></li>
-                <li><a href="index.html#skills">Skills</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="photography.html">Photography</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-right">
-                <a href="mailto:hello@sukritkomalla.com">Available for projects &rarr;</a>
+<!-- DEV-EDIT: CONTACT-EMAIL-LINK -->
+                <a href="mailto:sukrit.komalla@gmail.com">Available for projects &rarr;</a>
+<!-- DEV-EDIT-END: CONTACT-EMAIL-LINK -->
             </div>
         </div>
     </header>
 
     <main class="container">
         <!-- Archive Header -->
-        <section class="archive-intro">
-            <h1>The Archive</h1>
-            <p>A comprehensive compilation of works, research papers, and technical analysis cataloged by category and release date.</p>
+        <section class="archive-intro reveal-on-load">
+            <h1 class="reveal-on-load reveal-delay-1">The Archive</h1>
+            <p class="reveal-on-load reveal-delay-2">A comprehensive compilation of works, research papers, and technical analysis cataloged by category and release date.</p>
             
-            <div class="archive-controls">
+            <div class="archive-controls reveal-on-load reveal-delay-3">
                 <!-- Category Filters -->
                 <div class="archive-filters">
                     <button class="filter-btn active" data-filter="all">All Works</button>
@@ -57,52 +59,52 @@
         </section>
 
         <!-- Archive Table Ledger -->
-        <section class="archive-table">
+        <section class="archive-table reveal-on-scroll">
 <!-- DEV-EDIT: ARCHIVE-ROWS -->
-            <!-- Item 1: Project -->
-            <a href="posts/minimalist-furniture-design.html" class="archive-row" data-category="projects" data-preview="assets/furniture_preview.jpg">
+            <!-- Item: Minimalist Furniture Design -->
+            <article class="archive-row reveal-stagger-item fade-up" data-category="projects" data-preview="assets/furniture_preview.jpg">
                 <div class="archive-col col-date">June 18, 2026</div>
                 <div class="archive-col col-category">
                     <span class="archive-tag">Projects</span>
                 </div>
                 <div class="archive-col col-content">
-                    <h3 class="archive-title">Minimalist Furniture Design</h3>
+                    <h3 class="archive-title"><a href="posts/minimalist-furniture-design.html">Minimalist Furniture Design</a></h3>
                     <p class="archive-desc">An exploration of functional minimalism. Analyzing structural balance and modern aesthetic theories using warm oakwood and welded steel frames.</p>
                 </div>
                 <div class="archive-col col-action">
-                    <span class="archive-arrow-link">&rarr;</span>
+                    <a href="posts/minimalist-furniture-design.html" class="archive-arrow-link" aria-label="View Work">&rarr;</a>
                 </div>
-            </a>
+            </article>
 
-            <!-- Item 2: Research -->
-            <a href="posts/symbolism-in-modern-poetry.html" class="archive-row" data-category="research" data-preview="assets/poetry_preview.jpg">
+            <!-- Item: Symbolism in Modern Poetry -->
+            <article class="archive-row reveal-stagger-item fade-up" data-category="research" data-preview="assets/poetry_preview.jpg">
                 <div class="archive-col col-date">April 05, 2026</div>
                 <div class="archive-col col-category">
                     <span class="archive-tag">Research</span>
                 </div>
                 <div class="archive-col col-content">
-                    <h3 class="archive-title">Symbolism in Modern Poetry</h3>
+                    <h3 class="archive-title"><a href="posts/symbolism-in-modern-poetry.html">Symbolism in Modern Poetry</a></h3>
                     <p class="archive-desc">A literary thesis decoding hidden linguistic structures and metaphorical frameworks in mid-century expressionist poems.</p>
                 </div>
                 <div class="archive-col col-action">
-                    <span class="archive-arrow-link">&rarr;</span>
+                    <a href="posts/symbolism-in-modern-poetry.html" class="archive-arrow-link" aria-label="View Work">&rarr;</a>
                 </div>
-            </a>
+            </article>
 
-            <!-- Item 3: Analysis -->
-            <a href="posts/financial-market-trends.html" class="archive-row" data-category="analysis" data-preview="assets/market_preview.jpg">
+            <!-- Item: Financial Market Trends -->
+            <article class="archive-row reveal-stagger-item fade-up" data-category="analysis" data-preview="assets/market_preview.jpg">
                 <div class="archive-col col-date">January 29, 2026</div>
                 <div class="archive-col col-category">
                     <span class="archive-tag">Analysis</span>
                 </div>
                 <div class="archive-col col-content">
-                    <h3 class="archive-title">Financial Market Trends</h3>
+                    <h3 class="archive-title"><a href="posts/financial-market-trends.html">Financial Market Trends</a></h3>
                     <p class="archive-desc">A data-driven deep dive into systemic interest rate changes and their cascading effects on seed-stage technology investments.</p>
                 </div>
                 <div class="archive-col col-action">
-                    <span class="archive-arrow-link">&rarr;</span>
+                    <a href="posts/financial-market-trends.html" class="archive-arrow-link" aria-label="View Work">&rarr;</a>
                 </div>
-            </a>
+            </article>
 <!-- DEV-EDIT-END: ARCHIVE-ROWS -->
         </section>
     </main>
@@ -117,7 +119,9 @@
         <div class="container">
             <h2 class="cta-title">Let's Create Something Beautiful</h2>
             <p class="cta-desc">Whether you want to discuss a research thesis, view design portfolios, collaborate on system analysis, or share thoughts on design strategy—feel free to drop a line.</p>
-            <a href="mailto:hello@sukritkomalla.com" class="cta-email">hello@sukritkomalla.com</a>
+<!-- DEV-EDIT: CONTACT-EMAIL -->
+            <a href="mailto:sukrit.komalla@gmail.com" class="cta-email">sukrit.komalla@gmail.com</a>
+<!-- DEV-EDIT-END: CONTACT-EMAIL -->
         </div>
     </section>
 
