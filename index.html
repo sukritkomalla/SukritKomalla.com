@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sukrit Komalla — Portfolio & Archive</title>
-    <meta name="description" content="Personal portfolio and archive of Sukrit Komalla, featuring projects, research, poems, and analysis.">
+    <title>Sukrit Komalla — Portfolio</title>
+    <meta name="description" content="Personal portfolio of Sukrit Komalla, showcasing digital products, poetry, and research papers.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Header / Navigation -->
-    <header>
-        <div class="container navbar">
-            <div class="logo">
-                SUKRIT KOMALLA<span>.com</span>
+    <!-- Header Navigation Section exactly matching reference -->
+    <header class="container">
+        <div class="navbar">
+            <div class="nav-left">Sukrit Komalla</div>
+            <div class="nav-center">Portfolio</div>
+            <div class="nav-right">
+                <a href="mailto:hello@sukritkomalla.com">Available for projects &rarr;</a>
             </div>
+        </div>
+        <div class="sub-nav">
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
                 <span></span>
                 <span></span>
@@ -23,8 +27,9 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="archive.html">Archive</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html#process">Process</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </div>
     </header>
@@ -32,161 +37,292 @@
     <main class="container">
         <!-- Hero Section -->
         <section class="hero">
-            <div class="hero-content">
-                <div class="hero-status">Active Projects & Research</div>
-                <h1 class="hero-title">Sukrit<br>Komalla</h1>
-                <p class="hero-subtitle">
-                    A digital space documenting projects, academic research, poetry, and detailed market & system analysis. Exploring the intersections of technology, literature, and systems.
+            <!-- Massive Typography Backdrop Text -->
+            <div class="hero-backdrop-title">
+                <span>P</span><span>o</span><span>r</span><span>t</span><span>f</span><span>o</span><span>l</span><span>i</span><span>o</span>
+            </div>
+
+            <!-- Left column text -->
+            <div class="hero-col-1">
+                <span class="hero-greeting">Hello, I'm</span>
+                <h1 class="hero-name">Sukrit<br>Komalla</h1>
+                <div class="hero-title-sub">Creative Portfolio</div>
+                <p class="hero-intro-para">
+                    I craft elegant, high-performing digital works that blend research, creative analysis, system thinking, and user-centered design.
                 </p>
-                <div class="hero-buttons">
-                    <a href="archive.html" class="btn btn-primary">View Archive</a>
-                    <a href="#contact" class="btn btn-secondary">Get in touch</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="monogram-container">
-                    <!-- Elegant Custom Serif SK Monogram SVG -->
-                    <svg class="monogram-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="100" cy="100" r="90" fill="none" stroke="#111E30" stroke-width="0.75" stroke-dasharray="2 2" />
-                        <circle cx="100" cy="100" r="85" fill="none" stroke="#111E30" stroke-width="0.5" />
-                        
-                        <!-- Serif S -->
-                        <text x="65" y="125" font-family="'Cormorant Garamond', Georgia, serif" font-size="110" font-weight="300" fill="#111E30" letter-spacing="-5">S</text>
-                        <!-- Serif K -->
-                        <text x="105" y="125" font-family="'Cormorant Garamond', Georgia, serif" font-size="110" font-weight="300" fill="#C05C46" letter-spacing="-5">K</text>
-                        
-                        <!-- Tiny aesthetic subtext -->
-                        <text x="100" y="160" font-family="'Inter', sans-serif" font-size="7" font-weight="500" fill="#56687D" letter-spacing="4" text-anchor="middle">EST. 2026</text>
-                    </svg>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Works / Archive Teaser -->
-        <section class="section-padding border-top" id="featured">
-            <div class="section-header">
-                <h2 class="section-title">Selected Pieces</h2>
-                <p class="section-desc">A curated highlight of projects, analytical thoughts, poetry, and research papers.</p>
+                <div class="hero-signature">Sukrit Komalla</div>
             </div>
 
-            <div class="featured-grid">
-                <!-- Featured Project Card -->
-                <article class="work-card">
-                    <div class="work-meta">
-                        <span class="work-category">Projects</span>
-                        <span class="work-date">June 2026</span>
+            <!-- Isolated photo portrait column -->
+            <div class="hero-col-2">
+                <div class="hero-portrait-frame">
+                    <img src="assets/sukrit_portrait.jpg" alt="Sukrit Komalla Portrait" class="hero-portrait-img">
+                    <div class="badge-circle">
+                        <span class="badge-text-top">Available for</span>
+                        <span class="badge-text-center">2026</span>
+                        <span class="badge-text-bottom">Projects</span>
                     </div>
-                    <h3 class="work-card-title">Minimalist Furniture Design</h3>
-                    <p class="work-excerpt">
-                        An exploration of functional minimalism. Analyzing structural balance and modern aesthetic theories using warm oakwood and welded steel frames.
-                    </p>
-                    <a href="posts/minimalist-furniture-design.html" class="work-link">Read Details &rarr;</a>
-                </article>
-
-                <!-- Featured Research Card -->
-                <article class="work-card">
-                    <div class="work-meta">
-                        <span class="work-category">Research</span>
-                        <span class="work-date">April 2026</span>
-                    </div>
-                    <h3 class="work-card-title">Symbolism in Modern Poetry</h3>
-                    <p class="work-excerpt">
-                        A literary thesis decoding hidden linguistic structures and metaphorical frameworks in mid-century expressionist poems.
-                    </p>
-                    <a href="posts/symbolism-in-modern-poetry.html" class="work-link">Read Research &rarr;</a>
-                </article>
-
-                <!-- Featured Poem Card -->
-                <article class="work-card">
-                    <div class="work-meta">
-                        <span class="work-category">Poems</span>
-                        <span class="work-date">Feb 2026</span>
-                    </div>
-                    <h3 class="work-card-title">Silence of the Sea</h3>
-                    <p class="work-excerpt">
-                        "The waves rewrite the sand, a cold hand washing over old stone. Words left unspoken in the salt-stung wind..."
-                    </p>
-                    <a href="posts/silence-of-the-sea.html" class="work-link">Read Poem &rarr;</a>
-                </article>
-
-                <!-- Featured Analysis Card -->
-                <article class="work-card">
-                    <div class="work-meta">
-                        <span class="work-category">Analysis</span>
-                        <span class="work-date">Jan 2026</span>
-                    </div>
-                    <h3 class="work-card-title">Financial Market Trends</h3>
-                    <p class="work-excerpt">
-                        A data-driven deep dive into systemic interest rate changes and their cascading effects on seed-stage technology investments.
-                    </p>
-                    <a href="posts/financial-market-trends.html" class="work-link">Read Analysis &rarr;</a>
-                </article>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section class="section-padding border-top" id="experience">
-            <div class="section-header">
-                <h2 class="section-title">Timeline</h2>
-                <p class="section-desc">A log of professional roles, research assignments, and academic milestones.</p>
+                </div>
             </div>
 
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2025 — PRESENT</div>
-                    <h3 class="timeline-title">Independent Researcher</h3>
-                    <div class="timeline-org">Systems & Design Theory</div>
-                    <p class="timeline-desc">
-                        Conducting research on intersectional systems, writing analytical essays on global market conditions, and building minimalist product designs.
-                    </p>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2023 — 2025</div>
-                    <h3 class="timeline-title">Systems Analyst</h3>
-                    <div class="timeline-org">Apex Tech Group</div>
-                    <p class="timeline-desc">
-                        Analyzed database performance bottlenecks, designed distributed server patterns, and published technical white papers on network efficiency.
-                    </p>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2020 — 2023</div>
-                    <h3 class="timeline-title">Undergraduate Researcher</h3>
-                    <div class="timeline-org">Department of Humanities & Technology</div>
-                    <p class="timeline-desc">
-                        Explored natural language patterns and computer-mediated linguistics. Authored three papers and presented at the annual literary-tech symposium.
-                    </p>
-                </div>
+            <!-- Right column bullet lists -->
+            <div class="hero-col-3">
+                <ul class="hero-bullets-list">
+                    <li class="hero-bullet-item">
+                        <div class="hero-bullet-title">Researching</div>
+                        <div class="hero-bullet-desc">metaphorical systems and design patterns.</div>
+                    </li>
+                    <li class="hero-bullet-item">
+                        <div class="hero-bullet-title">Analyzing</div>
+                        <div class="hero-bullet-desc">financial market trends and core algorithms.</div>
+                    </li>
+                    <li class="hero-bullet-item">
+                        <div class="hero-bullet-title">Writing</div>
+                        <div class="hero-bullet-desc">expressive poems on isolation and structure.</div>
+                    </li>
+                </ul>
             </div>
         </section>
     </main>
 
-    <!-- Footer Contact Banner -->
-    <section class="footer-cta" id="contact">
+    <!-- Dark Section: Featured Projects/Articles Feed -->
+    <section class="featured-section" id="featured">
         <div class="container">
-            <h2 class="cta-title">Let's Create Something Beautiful</h2>
-            <p class="cta-desc">
-                Whether you want to discuss a research thesis, view design portfolios, collaborate on system analysis, or share thoughts on poetry—feel free to drop a line.
-            </p>
-            <a href="mailto:hello@sukritkomalla.com" class="cta-email">hello@sukritkomalla.com</a>
+            <div class="featured-header">
+                <h2 class="featured-title">Featured Pieces</h2>
+                <a href="archive.html" class="view-all-link">View All Works &rarr;</a>
+            </div>
+
+            <div class="featured-grid">
+                <!-- Project 1 -->
+                <a href="posts/minimalist-furniture-design.html" class="work-card">
+                    <div class="work-card-img-wrap">
+                        <svg width="100%" height="100%" viewBox="0 0 400 300" style="background:#17212E">
+                            <rect width="100%" height="100%" fill="#1b2735"/>
+                            <line x1="50" y1="50" x2="350" y2="250" stroke="#FAF8F5" stroke-opacity="0.1" stroke-width="2"/>
+                            <line x1="350" y1="50" x2="50" y2="250" stroke="#FAF8F5" stroke-opacity="0.1" stroke-width="2"/>
+                            <rect x="120" y="80" width="160" height="140" fill="none" stroke="#FAF8F5" stroke-opacity="0.2" stroke-width="2"/>
+                            <text x="50%" y="52%" font-family="'Cormorant Garamond', serif" font-size="1.5rem" font-style="italic" fill="#FAF8F5" text-anchor="middle" opacity="0.7">Minimalist Console</text>
+                        </svg>
+                    </div>
+                    <div class="work-card-info">
+                        <span class="work-card-num">01</span>
+                        <div class="work-card-text">
+                            <h3 class="work-card-title">Minimalist Furniture</h3>
+                            <span class="work-card-category">Projects / Furniture Design</span>
+                            <p class="work-card-desc">An exploration of functional minimalism combining warm oakwood and welded steel frames.</p>
+                        </div>
+                        <div class="work-card-arrow">&rarr;</div>
+                    </div>
+                </a>
+
+                <!-- Project 2 -->
+                <a href="posts/symbolism-in-modern-poetry.html" class="work-card">
+                    <div class="work-card-img-wrap">
+                        <svg width="100%" height="100%" viewBox="0 0 400 300" style="background:#17212E">
+                            <rect width="100%" height="100%" fill="#1f2c3b"/>
+                            <circle cx="200" cy="150" r="80" fill="none" stroke="#FAF8F5" stroke-opacity="0.15" stroke-width="1.5"/>
+                            <line x1="200" y1="40" x2="200" y2="260" stroke="#FAF8F5" stroke-opacity="0.1" stroke-width="1"/>
+                            <line x1="70" y1="150" x2="330" y2="150" stroke="#FAF8F5" stroke-opacity="0.1" stroke-width="1"/>
+                            <text x="50%" y="52%" font-family="'Cormorant Garamond', serif" font-size="1.5rem" font-style="italic" fill="#FAF8F5" text-anchor="middle" opacity="0.7">Modern Symbolism</text>
+                        </svg>
+                    </div>
+                    <div class="work-card-info">
+                        <span class="work-card-num">02</span>
+                        <div class="work-card-text">
+                            <h3 class="work-card-title">Poetic Symbolism</h3>
+                            <span class="work-card-category">Research / Literary Thesis</span>
+                            <p class="work-card-desc">A literary analysis decoding hidden linguistic structures in mid-century expressionist poems.</p>
+                        </div>
+                        <div class="work-card-arrow">&rarr;</div>
+                    </div>
+                </a>
+
+                <!-- Project 3 -->
+                <a href="posts/silence-of-the-sea.html" class="work-card">
+                    <div class="work-card-img-wrap">
+                        <svg width="100%" height="100%" viewBox="0 0 400 300" style="background:#17212E">
+                            <rect width="100%" height="100%" fill="#17212E"/>
+                            <path d="M 50 150 Q 125 100 200 150 T 350 150" fill="none" stroke="#FAF8F5" stroke-opacity="0.15" stroke-width="2"/>
+                            <path d="M 50 180 Q 125 130 200 180 T 350 180" fill="none" stroke="#FAF8F5" stroke-opacity="0.1" stroke-width="2"/>
+                            <text x="50%" y="52%" font-family="'Cormorant Garamond', serif" font-size="1.5rem" font-style="italic" fill="#FAF8F5" text-anchor="middle" opacity="0.7">Silence of the Sea</text>
+                        </svg>
+                    </div>
+                    <div class="work-card-info">
+                        <span class="work-card-num">03</span>
+                        <div class="work-card-text">
+                            <h3 class="work-card-title">Silence of the Sea</h3>
+                            <span class="work-card-category">Poems / Free Verse</span>
+                            <p class="work-card-desc">An expressive, free-verse poem capturing themes of coastal solitude and sand patterns.</p>
+                        </div>
+                        <div class="work-card-arrow">&rarr;</div>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-copy">
-                &copy; 2026 Sukrit Komalla. All rights reserved.
+    <!-- Side-by-side split process and skills lists section -->
+    <section class="container split-sections">
+        <!-- Process list section -->
+        <div class="process-column" id="process">
+            <h2 class="split-title">My Creative Process</h2>
+            
+            <div class="process-timeline">
+                <div class="process-step">
+                    <span class="process-num">01</span>
+                    <span class="process-name">Discover</span>
+                    <span class="process-desc">Broad reading, systemic observation, and raw ideas.</span>
+                </div>
+                <div class="process-step">
+                    <span class="process-num">02</span>
+                    <span class="process-name">Analyze</span>
+                    <span class="process-desc">Deep structural breakdown and mathematical review.</span>
+                </div>
+                <div class="process-step">
+                    <span class="process-num">03</span>
+                    <span class="process-name">Draft</span>
+                    <span class="process-desc">Prototyping schemas, poems, or geometric layouts.</span>
+                </div>
+                <div class="process-step">
+                    <span class="process-num">04</span>
+                    <span class="process-name">Refine</span>
+                    <span class="process-desc">Pruning unnecessary elements down to essentials.</span>
+                </div>
+                <div class="process-step">
+                    <span class="process-num">05</span>
+                    <span class="process-name">Deploy</span>
+                    <span class="process-desc">Final publishing, execution, and archiving.</span>
+                </div>
             </div>
-            <ul class="footer-socials">
-                <li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
-                <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
-                <li><a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a></li>
-            </ul>
+
+            <div class="process-footer-text">
+                A clear process. Thoughtful design. Powerful results.
+            </div>
+        </div>
+
+        <!-- Skills and tools grid section -->
+        <div class="skills-column" id="skills">
+            <h2 class="split-title">Tools & Skills</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-icon-placeholder">Py</div>
+                    <span class="skill-name">Python</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon-placeholder">Git</div>
+                    <span class="skill-name">Git Control</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon-placeholder">An</div>
+                    <span class="skill-name">Analysis</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon-placeholder">Lt</div>
+                    <span class="skill-name">Literature</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon-placeholder">H5</div>
+                    <span class="skill-name">HTML5</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon-placeholder">C3</div>
+                    <span class="skill-name">CSS3</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon-placeholder">JS</div>
+                    <span class="skill-name">Javascript</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon-placeholder">Ds</div>
+                    <span class="skill-name">Design</span>
+                </div>
+            </div>
+
+            <p class="skills-footer-quote">
+                "Design is not just what it looks like and feels like. Design is how it works."
+            </p>
+        </div>
+    </section>
+
+    <!-- split dark collab footer contact section -->
+    <section class="collab-section" id="contact">
+        <div class="container collab-grid">
+            
+            <!-- Left block quote with cropped portrait -->
+            <div class="collab-left">
+                <span class="collab-quote-mark">&ldquo;</span>
+                <h2 class="collab-quote">
+                    Let's create<br>something<br><span>extraordinary</span><br>together.
+                </h2>
+                
+                <!-- Beautiful arched portrait -->
+                <div class="collab-visual-frame">
+                    <img src="assets/sukrit_portrait.jpg" alt="Sukrit Komalla Arched portrait" class="collab-portrait-img">
+                </div>
+            </div>
+
+            <!-- Right block card contact table with QR code card -->
+            <div class="collab-right">
+                <h3 class="collab-title">Let's Collaborate</h3>
+                <p class="collab-desc">
+                    I'm currently open to collaborative research assignments, project contributions, systems analysis, or creative literary projects.
+                </p>
+
+                <!-- Detailed contact rows list -->
+                <div class="contact-table">
+                    <div class="contact-row">
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value"><a href="mailto:hello@sukritkomalla.com">hello@sukritkomalla.com</a></span>
+                    </div>
+                    <div class="contact-row">
+                        <span class="contact-label">Location</span>
+                        <span class="contact-value">Worldwide (Remote)</span>
+                    </div>
+                    <div class="contact-row">
+                        <span class="contact-label">Website</span>
+                        <span class="contact-value"><a href="https://sukritkomalla.com">sukritkomalla.com</a></span>
+                    </div>
+                </div>
+
+                <!-- Custom Interactive QR Card -->
+                <div class="qr-container-card">
+                    <div class="qr-text-side">
+                        <span class="qr-title-text">Scan to Visit</span>
+                        <span class="qr-arrow-indicator">&rarr;</span>
+                    </div>
+                    <div class="qr-graphic-box">
+                        <!-- Custom vector block QR placeholder -->
+                        <svg class="qr-svg" viewBox="0 0 100 100">
+                            <rect x="0" y="0" width="25" height="25" fill="#121A24"/>
+                            <rect x="5" y="5" width="15" height="15" fill="#FAF8F5"/>
+                            <rect x="75" y="0" width="25" height="25" fill="#121A24"/>
+                            <rect x="80" y="5" width="15" height="15" fill="#FAF8F5"/>
+                            <rect x="0" y="75" width="25" height="25" fill="#121A24"/>
+                            <rect x="5" y="80" width="15" height="15" fill="#FAF8F5"/>
+                            <rect x="35" y="10" width="10" height="15" fill="#121A24"/>
+                            <rect x="55" y="20" width="10" height="10" fill="#121A24"/>
+                            <rect x="40" y="50" width="20" height="20" fill="#121A24"/>
+                            <rect x="70" y="50" width="15" height="10" fill="#121A24"/>
+                            <rect x="75" y="75" width="10" height="10" fill="#121A24"/>
+                            <rect x="50" y="80" width="15" height="15" fill="#121A24"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer rows -->
+    <footer>
+        <div class="container footer-inner">
+            <span>&copy; 2026 Sukrit Komalla. All rights reserved.</span>
+            <div class="footer-right">
+                <span>Designed with passion</span>
+                <span class="footer-heart">&hearts;</span>
+            </div>
         </div>
     </footer>
 
